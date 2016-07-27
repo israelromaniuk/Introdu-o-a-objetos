@@ -4,43 +4,44 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Principal {
+
     static Scanner leia = new Scanner(System.in);
     static Funcionario funcio = new Funcionario();
     static DecimalFormat df = new DecimalFormat();
+
     public static void main(String[] args) {
-        
-        System.out.println("Qual o nome do funcionario?");
-        String nomeDoFuncionario =leia.next();
-        funcio.nome=nomeDoFuncionario;
-        System.out.println("Digite o rg do funcionario");
-        int rgDoFuncionario =leia.nextInt();
-        funcio.rg=rgDoFuncionario;
-        System.out.println("Qual o departamento que ele trabalha?");
-        String depa =leia.next();
-        funcio.departamento=depa;
-        System.out.println("Quando ele começou a trabalhar");
-        String começo= leia.next();
-        funcio.dataEntrada=começo;
-        System.out.println("Qual o salario do funcionario?");
-        double salarioFunc=leia.nextDouble();
-        funcio.salario=salarioFunc;
-        
-        System.out.println("-----------------------");
-        System.out.println("Nome do func: "+funcio.nome+"\n"
-                +"Rg do func: "+funcio.rg+"\n"+"Departamento: "+funcio.departamento+"\n"
-                +"DataDeEntrada: "+funcio.dataEntrada+"\n"+"Salario: "+df.format(funcio.salario));
-        System.out.println("-----------------------");
-        
+
+        boolean exit = true;
+        while (exit) {
+            System.out.println("1 - Adicionar Funcionario");
+            System.out.println("2 - Listar Funcionario");
+            System.out.println("0 - Exit");
+            int opcao = leia.nextInt();
+            switch (opcao) {
+
+                case 1:
+                    funcio.adicionaFuncionario();
+                    break;
+                case 2:
+                    funcio.listaFuncionario();
+                    break;
+                default:
+                    System.out.println("Obrigado!!");
+                    exit = false;
+                    break;
+            }
+
+        }
         //arrumar n exibe o reajuste
         /*System.out.println("Deseja dar aumento para este funcionario?");
-        String aumento= leia.next();
-        if(aumento.equalsIgnoreCase("sim")){
-            System.out.println(df.format(funcio.salario*10/100));
+         String aumento= leia.next();
+         if(aumento.equalsIgnoreCase("sim")){
+         System.out.println(df.format(funcio.salario*10/100));
             
-        }else{
-            System.out.println("Sem aumento :)");
-        }*/
-        System.out.println("O salario anual do Funcionario "+funcio.nome+ " é de: "
-                +df.format(funcio.calculoGanhoAnual()));
+         }else{
+         System.out.println("Sem aumento :)");
+         }*/
+        /*System.out.println("O salario anual do Funcionario " + funcio.nome + " é de: "
+        + df.format(funcio.calculoGanhoAnual()));*/
     }
 }

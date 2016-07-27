@@ -1,8 +1,5 @@
 package FabricaDeCarro;
 
 public class Motor {
-    int potencia;
-    String tipo;
-    String combustivel;
-    
+    int potencia=1300;
 }
