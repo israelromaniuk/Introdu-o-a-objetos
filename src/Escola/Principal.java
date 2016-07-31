@@ -1,3 +1,5 @@
+package Escola;
+
 
 import java.util.Scanner;
 
