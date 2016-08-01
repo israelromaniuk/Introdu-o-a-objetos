@@ -1,6 +1,7 @@
 package Biblioteca;
 
 import Bank.Funcionario;
+import java.awt.BorderLayout;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
@@ -15,13 +16,17 @@ public class Principal {
                 boolean exit = true;
         while (exit) {
                     System.out.println
-        (" _______________________________\n" +
-"|1 - ADICIONAR LIVROS          |\n" +
-"|2 - LISTAR LIVROS             |\n" +
-"|3 - REMOVER                   |\n" +
-"|0 - EXIT                      |\n" +
-"|_______________________________|");
-           
+        ("------------ MENU -------------");
+                    System.out.println
+        ("1 -- ADICIONA LIVRO------------");
+                    System.out.println
+        ("2 -- LISTA LIVRO---------------");
+                    System.out.println
+        ("3 -- REMOVE LIVRO--------------");
+                    System.out.println
+        ("0 -- EXIT----------------------");
+                    System.out.println
+        ("-------------------------------");
             int opcao = leia.nextInt();
             switch (opcao) {
                     
